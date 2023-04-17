@@ -10,37 +10,63 @@
 <body>
   <script>
 
+    // Gets a random choice from the computer
     function getComputerChoice (choice) {
       let myArray = ['Rock', 'Paper', 'Scissors'];
       return choice = myArray[Math.floor(Math.random()*myArray.length)];
     }
 
-    function playRound (playerSelection, computerSelection) {
-      if (playerSelection === computerSelection) return 'Draw';
+    // Ask choice from the player
+    const playerChoice = prompt("Choose: Rock, Paper, or Scissors?");
+      const playerSelection = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
 
-      else if ((playerSelection==='Rock') && (computerSelection==='Scissors'))
-          return 'You win! Rock beats Scissors';
-      else if ((playerSelection==='Rock') && (computerSelection==='Paper'))
-          return 'You Lose! Paper beats Rock';
-      else if ((playerSelection==='Paper') && (computerSelection==='Scissors'))
-          return 'You Lose! Scissors beats Paper';
-      else if ((playerSelection==='Paper') && (computerSelection==='Rock'))
-          return 'You Win! Paper beats Rock';
-      else if ((playerSelection==='Scissors') && (computerSelection==='Rock'))
-          return 'You Lose! Rock beats Scissors';
-      else if ((playerSelection==='Scissors') && (computerSelection==='Paper'))
-          return 'You Win! Scissors beats Paper';
+    // Plays a round of RPS
+    function playRound (playerSelection, computerSelection) {
+      if (playerSelection === computerSelection) return result=0;
+
+      else if ((playerSelection==='Rock') && (computerSelection==='Scissors') ||
+        (playerSelection==='Paper') && (computerSelection==='Rock') ||
+        (playerSelection==='Scissors') && (computerSelection==='Paper')) {
+          return 1;
+        }
+      else {
+        return -1;
+      }
     }
 
+    let playerScore=0, computerScore=0, roundCounter=0;
 
-    let playerChoice = "rOCK";
-    let playerSelection = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
+    function game() {
+      if (roundResult === 1) {
+        return 'You win ' + playerSelection + ' beats ' + computerSelection;
+      } else if (roundResult === -1) {
+        return 'You lose ' + computerSelection + ' beats ' + playerSelection;
+      } else {
+        return 'Its a Draw!';
+      }
+    }
 
-    let computerSelection = getComputerChoice();
+    function countRound() [
+      if (roundResult === 1 || roundResult ===-1 || roundResult===0) {
+        roundCounter++;
+      }
+    ]
+
+    const computerSelection = getComputerChoice();
+    let roundResult = playRound (playerSelection, computerSelection)
+
+    if (roundResult === 1) {
+      playerScore++;
+    } else if (roundResult === -1) {
+    computerScore++;
+   }
+
+  
 
     console.log("Computer chooses: " + computerSelection)
     console.log("Player chooses: " + playerSelection)
-    console.log(playRound(playerSelection, computerSelection));
+    console.log(game())
+    console.log('Player Score: ' + playerScore, '/ Computer Score: ' + computerScore)
 
 
 
@@ -50,19 +76,28 @@
 </html>
 
 <!-- 
-computer chooses Rock, Paper, or Scissors
-computer random generate a choice
-Human chooses case-insensitive Rock, Paper, or Scissors
 
-Allow human to choose through selection / button
 
-Rock > Scissors
-Paper > Rock
-Scissors > Paper 
-Else Same choice = draw
-Displlay win or lose message 
 
-make a game unfction of 5 rounds
-keeps score to report a winner or loser
+game (5 round game function playRound? ())
 
+playround
+if winner +1 score to tally > change string to helpful values
+draw = 0 
+else reuturn -1
+
+
+function game _
+matches won display Player _ / Computer _
+Win Condition if score 5 = gamer over, Whoever wins
+
+
+if result ===1 You win variable beats variable
+if result =-1 You lose variable beats variable
+
+Console Log score variable player score / variable computer score
+console log to display the results of each round and winner
+
+
+call playround 5 times or if score
 -->
