@@ -20,8 +20,8 @@
     const playerChoice = prompt("Choose: Rock, Paper, or Scissors?");
       const playerSelection = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
 
-    // Plays a round of RPS
-    function playRound (playerSelection, computerSelection) {
+    // Plays a round of RPS and returns a value for the winner
+    function playRound (playerSelection, computerSelection) { 
       if (playerSelection === computerSelection) return result=0;
 
       else if ((playerSelection==='Rock') && (computerSelection==='Scissors') ||
@@ -34,18 +34,18 @@
       }
     }
 
-    // Score variables
+    // Incremental Score variables
     let playerScore=0, computerScore=0, roundCounter=0;
 
     
-    // Announces winner of single round
-    function game() {
+    // Announces winner of single round using winning value
+    function roundWinner() {
       if (roundResult === 1) {
         return 'You win ' + playerSelection + ' beats ' + computerSelection;
       } else if (roundResult === -1) {
         return 'You lose ' + computerSelection + ' beats ' + playerSelection;
       } else {
-        return 'Its a Draw!';
+        return 'It\'s a Draw!';
       }
     }
 
@@ -53,7 +53,7 @@
     const computerSelection = getComputerChoice();
     let roundResult = playRound (playerSelection, computerSelection)
 
-    // Increments score and rounds with roundResult
+    // Increments score and rounds with roundResult variable
     if (roundResult === 1) {
       playerScore++;
     } else if (roundResult === -1) {
@@ -63,22 +63,22 @@
       roundCounter++;
     }
 
-  // Announces winner of five round game (currently only tracks round 1 win)
-    function winner() {
-      if ((roundCounter===1) && (playerScore > computerScore)) {
-        return "Player wins the game!" 
-      } else {
-        return "Computer wins the game!"
-      }
+    // Announces winner of five round game
+    function gameWinner() {
+      if (roundCounter===5) { 
+        if (playerScore > computerScore) {
+          return "Player wins the game!" 
+        } else if (playerScore < computerScore) {
+          return "Computer wins the game!"
+        } else return 'The game ended in a tie!';
+        }
     }
 
-  // Test functions in console.log
-    console.log("Computer chooses: " + computerSelection)
-    console.log("Player chooses: " + playerSelection)
-    console.log(game())
-    console.log ('Round Number: ' + roundCounter)
+    // Test functions in console.log
+    console.log('Player chooses ' + playerSelection + ' and Computer chooses ' + computerSelection)
+    console.log('Round ' + roundCounter + ': '+ roundWinner())
     console.log('Player Score: ' + playerScore, '/ Computer Score: ' + computerScore)
-    console.log (winner())
+    console.log (gameWinner())
 
 
 
@@ -93,22 +93,6 @@
 
 game (5 round game function playRound? ())
 
-playround
-if winner +1 score to tally > change string to helpful values
-draw = 0 
-else reuturn -1
-
-
-function game _
-matches won display Player _ / Computer _
-Win Condition if score 5 = gamer over, Whoever wins
-
-
-if result ===1 You win variable beats variable
-if result =-1 You lose variable beats variable
-
-Console Log score variable player score / variable computer score
-console log to display the results of each round and winner
 
 
 call playround 5 times or if score
