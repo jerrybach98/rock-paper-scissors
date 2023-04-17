@@ -34,8 +34,11 @@
       }
     }
 
+    // Score variables
     let playerScore=0, computerScore=0, roundCounter=0;
 
+    
+    // Announces winner of single round
     function game() {
       if (roundResult === 1) {
         return 'You win ' + playerSelection + ' beats ' + computerSelection;
@@ -46,27 +49,36 @@
       }
     }
 
-    function countRound() [
-      if (roundResult === 1 || roundResult ===-1 || roundResult===0) {
-        roundCounter++;
-      }
-    ]
-
+    // Captures randomized computer choice and round winner into variables
     const computerSelection = getComputerChoice();
     let roundResult = playRound (playerSelection, computerSelection)
 
+    // Increments score and rounds with roundResult
     if (roundResult === 1) {
       playerScore++;
     } else if (roundResult === -1) {
     computerScore++;
-   }
+    }
+    if (roundResult === 1 || roundResult ===-1 || roundResult===0) {
+      roundCounter++;
+    }
 
-  
+  // Announces winner of five round game (currently only tracks round 1 win)
+    function winner() {
+      if ((roundCounter===1) && (playerScore > computerScore)) {
+        return "Player wins the game!" 
+      } else {
+        return "Computer wins the game!"
+      }
+    }
 
+  // Test functions in console.log
     console.log("Computer chooses: " + computerSelection)
     console.log("Player chooses: " + playerSelection)
     console.log(game())
+    console.log ('Round Number: ' + roundCounter)
     console.log('Player Score: ' + playerScore, '/ Computer Score: ' + computerScore)
+    console.log (winner())
 
 
 
