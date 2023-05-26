@@ -5,88 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="test.js" defer></script>
 </head>
 
 <body>
-  <script>
 
-    // Gets a random choice from the computer 
-    function getComputerChoice () {
-      let myArray = ['Rock', 'Paper', 'Scissors'];
-      return choice = myArray[Math.floor(Math.random()*myArray.length)];
-    }
-
-    // Plays a round of RPS and returns a value to indicate winner
-    function playRound (playerSelection, computerSelection) { 
-      if (playerSelection === computerSelection) return 0;
-
-      else if ((playerSelection==='Rock') && (computerSelection==='Scissors') ||
-        (playerSelection==='Paper') && (computerSelection==='Rock') ||
-        (playerSelection==='Scissors') && (computerSelection==='Paper')) {
-        return 1;
-        }
-      else {
-        return -1;
-      }
-    }
-
-    // Uses winning value to announce winner of single round 
-    function roundWinner(playerSelection, computerSelection, roundResult) {
-      if (roundResult === 1) {
-        return 'You win ' + playerSelection + ' beats ' + computerSelection;
-      } else if (roundResult === -1) {
-        return 'You lose ' + computerSelection + ' beats ' + playerSelection;
-      } else if (roundResult === 0) {
-        return 'It\'s a Draw!';
-      }
-    }
-
-    //Plays 5 round game 
-    function game() {
-      //incremental variables
-      let playerScore=0, computerScore=0, roundCounter=0;
-
-      while (roundCounter<5) {
-        // Ask caps insesnitive choice from the player 
-        const playerChoice = prompt("Choose: Rock, Paper, or Scissors?");
-        const playerSelection = playerChoice.charAt(0).toUpperCase() + playerChoice.slice(1).toLowerCase();
-        
-        // Results of computer choice function and round winner function as variables
-        const computerSelection = getComputerChoice();
-        let roundResult = playRound (playerSelection, computerSelection)
-
-        // Increments score and round number with winner value
-        if (roundResult === 1) {
-          playerScore++;
-        } else if (roundResult === -1) {
-        computerScore++;
-        }
-        if (roundResult === 1 || roundResult ===-1 || roundResult===0) {
-          roundCounter++;
-        }
-        // Announce round results to console.log
-        let roundAnnouncement = roundWinner(playerSelection, computerSelection, roundResult)
-        console.log(`Player chooses ${playerSelection} and Computer chooses ${computerSelection}`);
-        console.log(`Round ${roundCounter} : ${roundAnnouncement}`);
-        console.log(`Player Score: ${playerScore} / Computer Score: ${computerScore}`);
-      }
-
-      // Announces winner of five round game
-      if (roundCounter===5) { 
-        if (playerScore > computerScore) {
-          return "Player wins the game!";
-        } else if (playerScore < computerScore) {
-          return "Computer wins the game!";
-        } else if(playerScore === computerScore) 
-          return 'The game ended in a tie!';
-      }
-    }
-
-    // Test function in console.log
-    console.log (game ())
-
-
-  </script>
+  <h1>Rock Paper Scissors!</h1>
+  <h3 class="question">Make your selection:</h3>
+  <div class="btnContainer">
+    <button class="choiceBtn">Rock</button>
+    <button class="choiceBtn">Paper</button>
+    <button class="choiceBtn">Scissors</button>
+  </div> 
+  
 </body>
 
 </html>
