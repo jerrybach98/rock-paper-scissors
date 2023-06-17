@@ -1,0 +1,126 @@
+body {
+  text-align: center;
+  background-color: #f9f7E7;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 3px solid green;
+  font-size: 26px;
+}
+
+.header {
+  display: flex;
+  font-size: 26px;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid red;
+  background-color: ;
+  padding: 0px;
+  background-color: rgb(236, 167, 167);
+}
+
+h1 {
+  margin-right: 16px;
+  color: #ffcd40;
+  font-size: 60px;
+  -webkit-text-stroke: 2.5px black;
+}
+
+.sound {
+  height: 30px;
+  width: 30px;
+}
+
+.sound:hover {
+  /*background-color:#f7f7f7;*/
+  transform: scale(1.1);
+
+}
+
+.logo {
+  max-width: 80px;
+  height: auto;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 3px solid red;
+}
+
+.desc {
+  margin-right: 20px;
+}
+
+.rules {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.sound, .logo, h1, .desc, .mogu, .player {
+  border: 3px solid blue;
+}
+
+.results {
+  border: 3px solid blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+}
+
+.resultImg {
+  margin-left: 55px;
+  margin-right: 75px;
+}
+
+.filler {
+  visibility: hidden;
+  height: 150px;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  border: 3px solid red;
+}
+
+.player, .mogu {
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.choiceBtn {
+  /*background-color: #f9f7E7;*/
+  background-color: rgb(236, 167, 167);
+  border-radius: 24px;
+  transition-duration: 0.1s;
+  margin-left: 30px;
+  margin-right: 30px;
+  border: 5px solid #ddd9b8;
+  cursor: pointer;
+}
+
+.choiceBtn:hover {
+  /*background-color:#f7f7f7;*/
+  background-color: rgb(253, 213, 213);
+  transform: scale(1.1);
+
+}
+
+.btnImage {
+  max-height: 150px;
+}
+
+.popUp {
+  display: flex;
+  background: lightcoral;
+  flex-direction: column;
+  visibility: hidden;
+}

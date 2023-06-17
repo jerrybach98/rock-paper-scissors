@@ -5,18 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="icon" type="image/png" href="./images/logo.png">
+    <title>Mogu RPS</title>
     <script src="test.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <audio class="audio" src="/sounds/background.mp3" autoplay loop preload ></audio>
 </head>
 
 <body>
+  <div class="header">
+    <h1> ROCK PAPER SCISSORS</h1>
+    <input type="image" id="sound" class="sound" src="./images/unmute.png" alt="Mute and unmute button"/>
+  </div>
 
-  <h1>Rock Paper Scissors!</h1>
-  <h3 class="question">Make your selection:</h3>
-  <div class="btnContainer">
-    <button class="choiceBtn">Rock</button>
-    <button class="choiceBtn">Paper</button>
-    <button class="choiceBtn">Scissors</button>
+  <div class="hero">
+    <p class="desc">Play against Mogu the Shibe:</p>
+    <img src="./images/logo.png" class="logo" alt="Cropped image of Mogu a Shiba Inu"></a>
+  </div>
+
+  <div class="prompt">
+    <p class="rules">First to 5 points wins</h3>
+    <p class="action">Make your selection against Mogu!</h3>
   </div> 
+
+  <div class="results">
+    <img src="./images/rock.png" class="filler">
+  </div>
+
+  <div class="score">
+    <p class="player">PLAYER: 0</p>
+    <p class="mogu">MOGU: 0</p>
+  </div>
+
+  <div class="btnContainer">
+    <button type="button" class="choiceBtn" data-selection="Rock"><img src="./images/rock.png" class="btnImage"></button>
+    <button type="button" class="choiceBtn" data-selection="Paper"><img src="./images/paper.png" class="btnImage"></button>
+    <button type="button" class="choiceBtn" data-selection="Scissors"><img src="./images/scissors.png" class="btnImage"></button>
+  </div> 
+
+  <div class="popUp">
+    <button class="restart">Restart!</p>
+  </div>
   
 </body>
 
