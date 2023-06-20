@@ -23,7 +23,7 @@ function getComputerChoice () {
     return choice = myArray[Math.floor(Math.random()*myArray.length)];
   }
 
-// Plays a round of RPS by comparing choices to return a returns a value that indicates a winner, The value is returned to the variable = roundResult
+// Plays a round of RPS by comparing choices to return a value that indicates a winner, The value is returned to the variable = roundResult
 function playRound (playerSelection, computerSelection) { 
   if (playerSelection === computerSelection) return 0;
 
@@ -130,11 +130,14 @@ function game() {
         winner = 'Mogu wins the game!';
       } else if(playerScore === computerScore) 
         winner = 'The game ended in a tie!';
-      const popUp = document.querySelector('.popUp');
+      const popUpContainer = document.querySelector('.popUpContainer');
+      const overlay = document.querySelector('.overlay');
       const gameWinner = document.createElement('p');
       gameWinner.textContent = winner;
-      popUp.insertBefore(gameWinner, restart);
-      popUp.style.visibility = 'visible';
+      gameWinner.classList.add('pHeader');
+      popUpContainer.insertBefore(gameWinner, restart);
+      popUpContainer.style.visibility = 'visible';
+      overlay.style.visibility = 'visible';
 
       //disable buttons at end
       const buttons = document.querySelectorAll('.choiceBtn');
@@ -147,9 +150,3 @@ function game() {
 }
 
 game ();
-
-
-
-// change results to paw pictures
-// ui for results
-// popup 

@@ -1,11 +1,12 @@
 body {
   text-align: center;
-  background-color: #f9f7E7;
+  background-color: #E5E9EC;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  border: 3px solid green;
+  margin: 0px;
+  height: 100vh;
   font-size: 26px;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -13,16 +14,15 @@ body {
   font-size: 26px;
   justify-content: center;
   align-items: center;
-  border: 3px solid red;
-  background-color: ;
   padding: 0px;
-  background-color: rgb(236, 167, 167);
+  margin-bottom: 5px;
+  background-color: #5B7C99;
 }
 
 h1 {
-  margin-right: 16px;
+  margin: 30px 16px;
   color: #ffcd40;
-  font-size: 60px;
+  font-size: 65px;
   -webkit-text-stroke: 2.5px black;
 }
 
@@ -32,21 +32,18 @@ h1 {
 }
 
 .sound:hover {
-  /*background-color:#f7f7f7;*/
   transform: scale(1.1);
-
 }
 
 .logo {
-  max-width: 80px;
+  max-width: 70px;
   height: auto;
 }
 
 .hero {
   display: flex;
   justify-content: center;
-  text-align: center;
-  border: 3px solid red;
+  align-items: center;
 }
 
 .desc {
@@ -56,18 +53,16 @@ h1 {
 .rules {
   font-size: 30px;
   font-weight: bold;
-}
-
-.sound, .logo, h1, .desc, .mogu, .player {
-  border: 3px solid blue;
+  margin-bottom: -10px;
 }
 
 .results {
-  border: 3px solid blue;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0px;
+  margin-top: -10px;
+  margin-bottom: -30px;
 }
 
 .resultImg {
@@ -83,7 +78,6 @@ h1 {
 .score {
   display: flex;
   justify-content: center;
-  border: 3px solid red;
 }
 
 .player, .mogu {
@@ -94,11 +88,11 @@ h1 {
 .btnContainer {
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .choiceBtn {
-  /*background-color: #f9f7E7;*/
-  background-color: rgb(236, 167, 167);
+  background-color: #5B7C99;
   border-radius: 24px;
   transition-duration: 0.1s;
   margin-left: 30px;
@@ -108,19 +102,97 @@ h1 {
 }
 
 .choiceBtn:hover {
-  /*background-color:#f7f7f7;*/
-  background-color: rgb(253, 213, 213);
+  background-color: #C5C4B2;
   transform: scale(1.1);
-
 }
 
 .btnImage {
   max-height: 150px;
 }
 
-.popUp {
+.popUpContainer {
   display: flex;
-  background: lightcoral;
+  background: rgba(228, 225, 204, 0.795);
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   visibility: hidden;
+  width: 500px;
+  max-width: 80%;
+  height: 200px;
+  border-radius: 18px;
+  border: 2px black solid;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  opacity: 100;
+}
+
+.pHeader {
+  font-weight: bold;
+  font-size: 36px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.restart {
+  cursor: pointer;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 28px;
+  padding: 8px 0px 0px 0px;
+  width: 150px;
+  height: 50px;
+  background-color: rgba(247, 246, 234, 0.795);
+  margin-bottom: 0px;
+}
+
+.restart:hover {
+  background-color: rgba(252, 252, 246, 0.995);;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #5B7C99;
+  padding: 10px;
+  flex: 0 0 30px;
+  margin-top: auto;
+}
+
+.gitLogo {
+  height: 20px;
+  width: 20px;
+  margin-right: 3px;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.gitLogo:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+}
+
+.github {
+  font-size: 20px;
+  margin-left: 3px;
+}
+
+.github:hover, .gitLogo:hover{
+  cursor: pointer;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+  pointer-events: none;
+  visibility: hidden;
+  backdrop-filter: blur(15px);
 }
